@@ -1,0 +1,23 @@
+<h1>Create Group</h1>
+
+  <%= if @error do %>
+    <p><%= @error %></p>
+  <%end %>
+<div>
+
+  <%= form_for @changeset, Routes.group_path(@conn, :create), fn f -> %>
+  <label>
+    group_name: <%= text_input f, :group_name %>
+  </label>
+  <%= for user <- @users do %>
+  <label for="user_name"><%= user |> Tuple.to_list |> Enum.join %></label>
+  <input type="checkbox" id="user" name={user |> Tuple.to_list |> Enum.join}>
+  <% end %>
+  <br>
+  <%= submit "Add a new Group" %>
+  <% end %>
+
+ 
+</div>
+
+    

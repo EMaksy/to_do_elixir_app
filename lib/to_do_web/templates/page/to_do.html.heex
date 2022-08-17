@@ -1,0 +1,38 @@
+<h1>Hello User, here is your to do list: </h1>
+
+
+
+<div class="container_to_do_list">
+    
+    <div>
+        <h1>All entries:</h1>
+
+        <div class="entry_container">
+          <%= for entry_text <- @entries do %>    
+          <div id={to_string(elem(entry_text,1))}>
+           
+              <p><%= elem(entry_text,0) %></p>
+              <%= form_for @changeset, Routes.page_path(@conn, :delete_user_entry), fn f -> %>
+                <%= hidden_input f, :id, value: elem(entry_text,1) %>
+              <%= submit "Delete"   %>
+            <% end %>
+    
+          </div>
+          <% end %>
+        </div>
+
+          <%= form_for @changeset, Routes.page_path(@conn, :add_entry), fn f -> %>
+          <label>
+            To_Do: <%= text_input f, :entry_text %>
+          </label>
+
+          <%= submit "Add a to do entry" %>
+        <% end %>
+
+    </div>
+
+
+   
+
+
+</div>

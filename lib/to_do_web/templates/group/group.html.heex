@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+    <h1>Hello from Group Page</h1>
+
+<div>
+    <h2>Exisitng Groups</h2>
+    <ol>
+        <%= for group_name <- @group_names do %>    
+        <li><%= Tuple.to_list(group_name)%></li>
+        <% end %>
+      </ol>
+
+    <div>
+
+    </div>
+</div>
+<div>
+
+    <%=button("Create Group", to: "/group/new", method: :get)%>
+</div>
+</section>
+</body>
+</html>
+
+
