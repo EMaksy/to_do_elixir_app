@@ -1,11 +1,10 @@
 # ToDo
 
-To start your Phoenix server:
+To start your ToDo app:
 
-  * Install dependencies with `mix deps.get`
-  * Setup the database `mix setup`
+  * Install docker
+  * Build the docker container`sudo docker-compose build?`
   * Start docker container with the postgress database `sudo docker-compose up -d`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
@@ -14,3 +13,4 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
   * User Registration and Login
   * Single User ToDo list basic functions are working and ready to use
   * Group ToDo is work in progress
+  
