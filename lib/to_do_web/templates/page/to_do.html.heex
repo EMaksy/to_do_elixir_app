@@ -10,13 +10,22 @@
         <div class="entry_container">
           <%= for entry_text <- @entries do %>    
           <div id={to_string(elem(entry_text,1))}>
-           
+            <div class="entry_row">
               <p><%= elem(entry_text,0) %></p>
+              <%= form_for @changeset, Routes.page_path(@conn, :edit_user_entry), fn f -> %>
+              <%= hidden_input f, :id, value: elem(entry_text,1) %>
+              <%= submit "Edit"   %>
+              <% end %>              
+            </div>
+           <div class="button_list">
+            <div>
               <%= form_for @changeset, Routes.page_path(@conn, :delete_user_entry), fn f -> %>
-                <%= hidden_input f, :id, value: elem(entry_text,1) %>
+              <%= hidden_input f, :id, value: elem(entry_text,1) %>
               <%= submit "Delete"   %>
-            <% end %>
-    
+              <% end %>
+            </div>
+
+           </div>
           </div>
           <% end %>
         </div>

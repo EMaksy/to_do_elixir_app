@@ -45,6 +45,14 @@ defmodule ToDoWeb.PageController do
     end
   end
 
+  def edit_user_entry(conn, params) do
+    id = get_userid_from_conn(conn)
+    entries = get_user_entries(id)
+    changeset = ToDo.ENTRY.changeset(%ToDo.ENTRY{})
+    # render the page after changed entry
+    render(conn, "to_do.html", entries: entries, changeset: changeset)
+  end
+
   def delete_user_entry(conn, params) do
     # grab id from params
     params_id = Map.fetch(params, "entry") |> Tuple.to_list() |> tl |> Enum.at(0)

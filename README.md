@@ -1,10 +1,10 @@
-# ToDo
+# ToDo Developer env
 
-To start your ToDo app:
+To Hack on your ToDo app:
 
   * Install docker
-  * Build the docker container`sudo docker-compose build`
-  * Start docker container with the postgress database `sudo docker-compose up -d`
+  * Build the docker database `sudo docker-compose up`
+  * Start the phoenix server `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 

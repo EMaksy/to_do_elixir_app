@@ -33,8 +33,8 @@ defmodule ToDoWeb.Router do
 
     get "/to_do/", PageController, :to_do
     post "/to_do/delete", PageController, :delete_user_entry
+    post "/to_do/edit", PageController, :edit_user_entry
     post "/to_do/add", PageController, :add_entry
-
     get "/group", GroupController, :index
     get "/group/new", GroupController, :new
     post "/group/create", GroupController, :create
