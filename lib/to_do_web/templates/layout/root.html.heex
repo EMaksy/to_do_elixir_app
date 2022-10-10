@@ -13,9 +13,9 @@
         <section class="container">
           <div class="container_header">
             <div class="container_header_left">
-              <a href="/"> <img src={Routes.static_path(@conn, "/images/SUSE_Logo-vert_L_Green-pos_sRGB.png")} width="75"/></a>
+            <!--<a href="/"> <img src={Routes.static_path(@conn, "/images/phoenix.png")} width="75" height="75"/></a>-->  
             </div> 
-            <h1>EMaksy's ToDo App</h1>
+            <h1>ToDo App</h1>
             <div class="container_header_right">
               <%= if Pow.Plug.current_user(@conn) do %>
               <span><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></span>
