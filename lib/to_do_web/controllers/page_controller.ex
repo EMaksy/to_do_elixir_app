@@ -45,6 +45,13 @@ defmodule ToDoWeb.PageController do
     end
   end
 
+  def edit_entry(conn, params) do
+    # need entry id
+    # need new entry
+    # change existing entry in database
+    # rendet page with new data
+  end
+
   def delete_user_entry(conn, params) do
     # grab id from params
     params_id = Map.fetch(params, "entry") |> Tuple.to_list() |> tl |> Enum.at(0)
@@ -84,23 +91,11 @@ defmodule ToDoWeb.PageController do
     user_id = id
 
     query =
-      from e in "entries",
+      from(e in "entries",
         where: e.user_id == ^user_id,
         select: {e.entry_text, e.id}
+      )
 
     ToDo.Repo.all(query)
   end
-
-  # def add_entry(conn, _paramas) do
-  # IO.puts("Add entry was pressed")
-  # get id from session
-  # id = get_userid_from_conn(conn)
-  # get user data from html
-  # changeset = Entry.changeset(entry, attrs)
-  # write user_entry to database
-
-  # get entries from database
-  #  entries = get_user_entries(id)
-  #  render(conn, "to_do.html", entries: entries)
-  # end
 end
