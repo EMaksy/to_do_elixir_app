@@ -25,3 +25,5 @@ npm-debug.log
 /assets/node_modules/
 
 .pgdata/
+
+/priv/static/assets/
