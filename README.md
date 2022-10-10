@@ -1,15 +1,24 @@
-# ToDo
+# My little Elixir/Phoenix to do app
 
-To start your ToDo app:
+## How to start/host the app
 
-  * Install docker
-  * Build the docker container`sudo docker-compose build`
-  * Start docker container with the postgress database `sudo docker-compose up -d`
+- Clone the repository and start the docker container with `docker-compose up`
+
+- Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+## To Hack on your ToDo app:
+
+- Install docker
+- Build the docker database `docker-compose up`
+- Get all the required dependencies `mix deps.get`
+
+* Setup the project `mix setup`
+
+- Start the phoenix server `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Current Features:
 
-  * User Registration and Login
-  * Single User ToDo list basic functions are working and ready to use
-  * Group ToDo is work in progress
+- User Registration and Login
+- ToDo list to add and delete entries
